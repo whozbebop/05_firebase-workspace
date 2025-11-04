@@ -6,10 +6,10 @@
 
 import { Link, Route, Routes } from "react-router-dom"
 import MainPage from './pages/MainPage'
-import PostListPage from './pages/post/PostListPage'
-import PostDetailPage from './pages/post/PostDetailPage'
-import PostRegistPage from './pages/post/PostRegistPage'
-import PostEditPage from './pages/post/PostEditPage'
+import PostListPage from './pages/posts/PostListPage'
+import PostDetailPage from './pages/posts/PostDetailPage'
+import PostRegistPage from './pages/posts/PostRegistPage'
+import PostEditPage from './pages/posts/PostEditPage'
 
 function App() {
 

@@ -19,7 +19,7 @@ function PostItem({ post, mode }) {
 
   const handlePostClick = () => {
     if(mode === 'list') {
-      navigate(`/post/${post.id}`)
+      navigate(`/posts/${post.id}`)
     }
   }
 

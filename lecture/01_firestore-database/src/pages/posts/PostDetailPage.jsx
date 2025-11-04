@@ -13,6 +13,7 @@ function PostDetailPage() {
     const fetchPost = async () => {
       setLoading(true)
       const post = await getPost(id);
+      console.log('가져온 post:', post)
       setPost(post)
       setLoading(false)
     }
