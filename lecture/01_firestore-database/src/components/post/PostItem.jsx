@@ -23,6 +23,10 @@ function PostItem({ post, mode }) {
     }
   }
 
+  const handlePostUpdateClick = () => {
+    navigate(`/posts/${post.id}/edit`)
+  }
+
   const handlePostDeleteClick = async () => {
     if(confirm('정말 삭제하시겠습니까?')){
       // 게시글 삭제 후 목록페이지 이동
@@ -40,7 +44,7 @@ function PostItem({ post, mode }) {
       { mode === 'detail' && (
         <>
           <p>{ post.content }</p>
-          <button>수정</button>
+          <button onClick={handlePostUpdateClick}>수정</button>
           <button onClick={handlePostDeleteClick}>삭제</button>
         </>
       ) }

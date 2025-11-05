@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { createPost } from '../../services/postService'
+import React, { useEffect, useState } from 'react'
+import { createPost, updatePost } from '../../services/postService'
 import { Navigate, useNavigate } from 'react-router-dom'
 /*
   게시글 폼 컴포넌트
@@ -33,6 +33,15 @@ function PostForm({mode, initialData}) {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if(initialData) {
+      setFormData({
+        title: initialData.title,
+        content: initialData.content
+      }) 
+    }
+  }, [initialData]) // initialData 값이 변경되면 useEffect 실행
+
   const handleFormDateChange = (e) => {
     setFormData({
       ...formData,
@@ -52,7 +61,8 @@ function PostForm({mode, initialData}) {
       await createPost(formData);
       navigate('/posts')
     }else if(mode === 'edit'){
-      
+      await updatePost(initialData.id, formData)
+      navigate(`/posts/${initialData.id}`);
     }
 
   }
